@@ -424,7 +424,7 @@ class ControlMarkdownNode(BaseMarkdownNode):
             line_idx += 1
             return line_idx
 
-        if line.lstrip()[0] != '-' or not read_parts:
+        if line.lstrip().startswith('-') or not read_parts:
             # Line of text in prose
             part.prose += line + '\n'
             line_idx += 1
